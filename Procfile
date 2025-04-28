@@ -1,1 +1,1 @@
-web: target/vby-software.jar vby-software.jar
+web: java -jar target/vby-software.jar
