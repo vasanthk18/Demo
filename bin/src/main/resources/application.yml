@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://3.226.14.5:5432/smartboda2
+    username: postgres
+    password: igs-dev
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        
+#image:
+#  path: "/logo.png"
+  
+server:
+  port: 8082
+  ssl:
+    key-alias: spring-https
+    key-store: classpath:keystore.jks
+    key-store-type: JKS
+    key-password: intellion
+    
+cloud:
+  aws:
+    credentials:
+      accessKey: ${AWS_ACCESS_KEY_ID:}
+      secretKey: ${AWS_SECRET_ACCESS_KEY:}
+    region:
+      static: us-east-1
+    stack:
+      auto: false
+      
+s3:
+  bucket:
+    name: vugaboda
+
+        
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        jdbc:
+#          datasource: DEBUG
