@@ -9,8 +9,8 @@ RUN mvn dependency:go-offline
 # Copy source code
 COPY src ./src
 
-# Package the application
-RUN mvn clean package -DskipTests
+# Package and repackage the application
+RUN mvn clean package spring-boot:repackage -DskipTests
 
 # Second Stage: Run the JAR
 FROM openjdk:17
