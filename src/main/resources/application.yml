@@ -27,8 +27,7 @@ spring:
 #  path: "/logo.png"
   
 server:
-  port: ${PORT:8080}
-
+  port: 8082
   ssl:
     key-alias: spring-https
     key-store: classpath:keystore.jks
